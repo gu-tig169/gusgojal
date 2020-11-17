@@ -51,22 +51,25 @@ class MainView extends StatelessWidget {
     );
   }
 }
-
+// Dropdownmeny som filtrerar vad som är gjort eller inte
 Widget _dropdownMenu() {
   List<String> alt = ['All', 'Done', 'Not done'];
 
-  return PopupMenuButton<String>(
-    icon: Icon(Icons.filter_list),
-    onSelected: altAction,
-        itemBuilder: (BuildContext context) {
-          return alt.map((String alt) {
-            return PopupMenuItem(
-              value: alt,
-              child: Text(alt),
-            );
-          }).toList();
-        }
-      );
+  return Padding(
+    padding: const EdgeInsets.all(12.0),
+    child: PopupMenuButton<String>(
+      icon: Icon(Icons.tune),
+      onSelected: altAction,
+          itemBuilder: (BuildContext context) {
+            return alt.map((String alt) {
+              return PopupMenuItem(
+                value: alt,
+                child: Text(alt),
+              );
+            }).toList();
+          }
+        ),
+  );
     }
     
     class SecondView extends StatelessWidget {
@@ -116,12 +119,34 @@ Widget _dropdownMenu() {
     }
     
     Widget _checkbox(String toDo) {
-      return CheckboxListTile(
-          title: Text(toDo),
-          value: false,
-          onChanged: (value) {
-            print('Hej');
-          });
+      return Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15)
+        ),
+              child: CheckboxListTile(
+            title: Text(
+              toDo,
+              style: TextStyle(
+                fontSize: 20.0 ),
+                ),
+                controlAffinity: ListTileControlAffinity.leading,
+                secondary: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {} , //Kod för ta bort saker från listan
+                  ),
+            value: false,
+            onChanged: (value) {
+              print('Hej');
+
+
+
+              
+
+            
+            
+            }),
+            
+      );
     }
     
     void altAction(String alt) {
