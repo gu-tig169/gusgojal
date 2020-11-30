@@ -29,7 +29,7 @@ class MainView extends StatelessWidget {
                             .setFilterBy(value)
                       },
                   itemBuilder: (context) => [
-                        PopupMenuItem(child: Text('All'), value: 'all'),
+                        PopupMenuItem(child: Text('All'), value: 'All'),
                         PopupMenuItem(child: Text('Done'), value: 'Done'),
                         PopupMenuItem(child: Text('Not Done'), value: 'Not Done')
                       ]),
