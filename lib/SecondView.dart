@@ -1,5 +1,6 @@
 import 'package:firstapp/Model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SecondView extends StatelessWidget {
 
@@ -10,8 +11,13 @@ class SecondView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
-        backgroundColor: Colors.grey[600],
-        title: Text('Lägg till uppgifter'),
+        backgroundColor: Colors.grey,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 50.0),
+          child: Text('Lägg till uppgifter',
+          style: GoogleFonts.sansita(),
+          ),
+        )
       ),
       body: Center(
         child: Padding(
@@ -19,7 +25,7 @@ class SecondView extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top:30.0),
+                padding: EdgeInsets.only(top:30.0,),
                 child: TextField(
                   controller: myController,
                   textCapitalization: TextCapitalization.sentences,
@@ -53,8 +59,8 @@ Widget _addButton(context, TextEditingController myController) {
   return IconButton(
       iconSize: 40.0,
       icon: Icon(Icons.add),
+      color: Colors.amber,
       onPressed: () {
-        print('You pressed add');
         Navigator.pop(
             context, Item(checkBoxIs: false, thingsToDo: myController.text));
       });
@@ -63,8 +69,10 @@ Widget _addButton(context, TextEditingController myController) {
 Widget _textAdd() {
   return Text(
     'Lägg till',
-    style: TextStyle(
+    style: GoogleFonts.sansita(
+      color: Colors.white,
       fontSize: 20.0,
+      
     ),
   );
 }
