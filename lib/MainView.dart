@@ -48,7 +48,7 @@ class MainView extends StatelessWidget {
               var newToDo = await Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SecondView()));
 
-              if (newToDo != '') {
+              if (newToDo != null) {
                 Provider.of<Model>(context, listen: false).addToList(newToDo);
               }
             },

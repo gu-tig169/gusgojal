@@ -27,7 +27,7 @@ class CheckboxList extends StatelessWidget {
           value: item.checkBoxIs,
           onChanged: (bool newValue) {
             var state = Provider.of<Model>(context, listen: false);
-            state.setCheckbox(index, newValue);
+            state.setCheckbox(item, newValue);
           }),
           title: Text(
             item.thingsToDo,

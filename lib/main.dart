@@ -5,6 +5,8 @@ import 'Model.dart';
 
 void main() {
   var state = Model();
+  state.getList();
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => state,

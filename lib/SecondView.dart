@@ -61,9 +61,15 @@ Widget _addButton(context, TextEditingController myController) {
       icon: Icon(Icons.add),
       color: Colors.amber,
       onPressed: () {
-        Navigator.pop(
+        if (myController.text == '') {
+          Navigator.pop(context);
+        } else { 
+          Navigator.pop(
             context, Item(checkBoxIs: false, thingsToDo: myController.text));
-      });
+      
+        }
+      }
+      );
 }
 
 Widget _textAdd() {
